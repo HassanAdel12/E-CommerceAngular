@@ -1,0 +1,48 @@
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center register-container">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Login</h3>
+                </div>
+
+                <br>
+                
+                <div class="card-body">
+                    <form [formGroup]="Loginform" (ngSubmit)="LoginUser()">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" formControlName="Email" required>
+                            @if (Loginform.controls.Email.invalid) {
+                                <div  class="text-danger">
+                                    Email address must be from gmail.com domain
+                                </div>
+                            }
+                            @else {
+
+                            }
+                        </div>
+
+                        <br>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" formControlName="Password" required>
+                            @if (Loginform.controls.Password.invalid) {
+                                <div  class="text-danger">
+                                    Password must be between 6 and 20 characters long
+                                </div>
+                            }
+                        </div>
+                        
+                        <br>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

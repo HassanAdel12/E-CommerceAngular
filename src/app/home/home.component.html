@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <div class="row row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-5 ms-2 justify-content-evenly">
+
+
+    @for (product of Products; track product.code) {
+    <div class="col-md-4 mb-6">
+      <div class="card" appChangeColor style="max-width: 18rem;">
+        <img class="card-img-top" [src]="image" alt="{{ product.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            <strong>Category:</strong> {{ product.category }} <br>
+            <strong>Price:</strong> ${{ product.price }} <br>
+            <strong>Minimum Quantity:</strong> {{ product.minimumQuantity }} <br>
+            <strong>Description:</strong> {{ product.description}} <br>
+          </p>
+          <button class="btn btn-primary me-5" routerLink="/Products/{{product.code}}"> Details </button>
+          <button class="btn btn-primary" (click)="delete(product.code)">Delete</button>
+        </div>
+      </div>
+    </div>
+    }
+
+
+
+  </div>
+</div>

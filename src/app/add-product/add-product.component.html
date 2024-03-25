@@ -1,0 +1,110 @@
+
+
+<form [formGroup]="ProductForm">
+    <fieldset>
+      <legend>Add Student</legend>
+      
+      <br>
+
+      <div class="row">
+        <label for="Code" class="col-sm-2 col-form-label">Code</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control-plaintext" id="Code" formControlName="code" (ngModelChange)="checkID()">
+          
+        @if(ProductForm.controls.code.invalid || ! contain ){
+          <div>Code Not Vaild</div>
+        }
+        
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <label for="Name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control-plaintext" id="Name" formControlName="name">
+          @if(ProductForm.controls.name.invalid){
+            <div>Name Not Vaild</div>
+          }
+        </div>
+      </div>
+      
+     <br>
+
+      <div class="row">
+        <label for="Description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control-plaintext" id="Description" formControlName="description">
+          @if(ProductForm.controls.description.invalid){
+            <div>Description Not Vaild</div>
+          }
+          
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <label for="Price" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control-plaintext" id="Price" formControlName="price">
+          @if(ProductForm.controls.price.invalid){
+            <div>Price Not Vaild</div>
+          }
+        </div>
+      </div>
+      
+      <br>
+
+      <div class="mb-3">
+        <label for="Image" class="form-label">Image</label>
+        <input class="form-control" type="file" id="Image" (change)="ImageInput($event)" required>
+      </div>
+
+      <br>
+
+      <br>
+
+      <div class="row">
+        <label for="Category" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control-plaintext" id="Category" formControlName="category">
+          @if(ProductForm.controls.category.invalid){
+            <div>Category Not Vaild</div>
+          }
+        </div>
+      </div>
+
+
+      <br>
+
+      <div class="row">
+        <label for="MinimumQuantity" class="col-sm-2 col-form-label">Minimum Quantity</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control-plaintext" id="MinimumQuantity" formControlName="minimumQuantity">
+          @if(ProductForm.controls.minimumQuantity.invalid){
+            <div>Minimum Quantity Not Vaild</div>
+          }
+        </div>
+      </div>
+
+
+      <br>
+
+      <div class="row">
+        <label for="DiscountRate" class="col-sm-2 col-form-label">Discount Rate</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control-plaintext" id="DiscountRate" formControlName="discountRate">
+          @if(ProductForm.controls.discountRate.invalid){
+            <div>DiscountRate Not Vaild</div>
+          }
+        </div>
+      </div>
+
+
+      <br>
+      
+      <button type="button" class="btn btn-primary" (click)="AddStudent()">Add</button>
+    </fieldset>
+  </form>

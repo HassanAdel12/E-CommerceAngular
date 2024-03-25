@@ -1,0 +1,22 @@
+@if (Product){
+<div class="alert alert-secondry">
+    <img [src]="image" alt="{{ Product.name }}" width="20%" height="100px"><br><br>
+    <p>code:   {{Product.code}}</p>
+    <p>name:   {{Product.name}}</p>
+    <p>description:   {{Product.description}}</p>
+    <p>price:   {{Product.price}}</p>
+    <p>category:   {{Product.category}}</p>
+    <p>minimum Quantity:   {{Product.minimumQuantity}}</p>
+    <p>discount Rate:   {{Product.discountRate}}%</p>
+
+</div>
+<br>
+<br>
+<button type="button" class="btn btn-outline-primary" (click)="backToHome()">Back to Home</button>
+
+}
+@else {
+<div class="alert alert-danger">
+    <h1>Loading...</h1>
+</div>
+}
